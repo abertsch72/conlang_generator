@@ -2,7 +2,7 @@
 call functions in here
 """
 from typing import Text
-from src.Language import Language, IPAtoIPA
+from src.Language import Language, IPAtoIPA, IPAtoLetters
 
 def create_conlang() -> Language:
     pass
@@ -16,6 +16,9 @@ def tryout():
     print(toIPA(teststr))
 
     converter = IPAtoIPA()
-    print(converter.convert(toIPA(teststr)))
+    toStr = IPAtoLetters()
+    newIPA = converter.convert(toIPA(teststr))
+    print(newIPA)
+    print(toStr.convert(newIPA))
 
 tryout()
